@@ -7,6 +7,7 @@ from __future__ import annotations
 from datetime import date
 from pathlib import Path
 import json
+import math
 from typing import Any
 
 DEFAULT_THRESHOLDS = {
@@ -32,9 +33,12 @@ def _number(value: Any, field: str, required: bool = False):
     if value is None or value == "":
         return (None, f"{field} is required." if required else None)
     try:
-        number = int(value)
+        numeric = float(value)
     except (TypeError, ValueError):
         return None, f"{field} must be a whole number."
+    if not math.isfinite(numeric) or not numeric.is_integer():
+        return None, f"{field} must be a finite whole number."
+    number = int(numeric)
     if number < 0:
         return None, f"{field} cannot be negative."
     return number, None
