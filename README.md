@@ -1,10 +1,16 @@
 # CampaignPulse AI — Adobe Campaign Edition
 
+![CampaignPulse AI — campaign analytics and health diagnostics](assets/campaignpulse-banner.svg)
+
 **An independent campaign intelligence mini-tool by Sangram Ghatge.**
 
 CampaignPulse turns aggregate email campaign metrics into deterministic KPIs, transparent health diagnostics, evidence-labelled findings and prioritized Adobe Campaign operational checks.
 
 > Paste the numbers. Understand what happened. Know what to check next.
+
+## Live demo
+
+[Launch CampaignPulse AI](https://campaignpulse-ai.streamlit.app/)
 
 ## Launch locally
 
@@ -67,6 +73,8 @@ The creator package is prepared for review; it has not been submitted to ModletH
 
 ```
 app.py
+assets/
+  campaignpulse-banner.svg
 campaignpulse/
   engine.py
   reasoning.py
