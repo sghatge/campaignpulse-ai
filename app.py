@@ -15,26 +15,36 @@ st.set_page_config(page_title="CampaignPulse AI", page_icon="◈", layout="wide"
 # ModletHub-inspired: editorial, practical, creator-attributed and workflow-first.
 st.markdown("""
 <style>
-.block-container{max-width:1180px;padding-top:1.4rem;padding-bottom:3rem}
-.hero{background:linear-gradient(118deg,#172554 0%,#263B65 55%,#B4533C 100%);color:#fff;border-radius:20px;padding:2rem 2.1rem;margin-bottom:1.1rem}
-.hero .eyebrow{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#FCD9C9;font-weight:700}
-.hero h1{color:#fff;font-size:2.45rem;letter-spacing:-.04em;margin:.35rem 0}
-.hero p{color:#F4EDE8;font-size:1.03rem;max-width:760px;margin:0}
-.step{background:#fff;border:1px solid #E7E5E4;border-radius:14px;padding:1rem;height:100%}
-.step b{display:block;color:#1C2A44;margin:.3rem 0}
-.step span{font-size:.85rem;color:#64748B}
-.kpi{background:#fff;border:1px solid #E7E5E4;border-radius:14px;padding:1rem 1.05rem}
-.kpi .label{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#64748B;font-weight:700}
-.kpi .value{font-size:1.8rem;font-weight:800;color:#172554}
-.kpi .sub{font-size:.75rem;color:#78716C}
-.finding{border:1px solid #E7E5E4;border-radius:13px;padding:1rem;margin:.55rem 0;background:#fff}
-.finding h4{margin:.1rem 0 .4rem;color:#1C2A44}
-.smallmuted{color:#64748B;font-size:.83rem}
-.stTabs [data-baseweb="tab-list"]{gap:.35rem}
-.stTabs [data-baseweb="tab"]{border-radius:9px 9px 0 0;background:#F5F5F4;padding:.55rem .9rem}
-.stTabs [aria-selected="true"]{background:#1E3A5F!important;color:white!important}
-section[data-testid="stSidebar"]{background:#F7F5F1}
-div[data-testid="stMetric"]{background:#fff;border:1px solid #E7E5E4;padding:.8rem;border-radius:12px}
+:root{--mh-ink:#1D1D1F;--mh-accent:#C93E05;--mh-accent-hover:#A93205;--mh-paper:#FFFFFF;--mh-soft:#F7F7F7;--mh-border:#E5E5E5;--mh-muted:#686868}
+html,body,[class*="css"]{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--mh-ink)}
+.block-container{max-width:1180px;padding-top:1.35rem;padding-bottom:3rem}
+h1,h2,h3,h4{color:var(--mh-ink)!important;letter-spacing:-.045em}
+h1{font-weight:750!important}
+.hero{background:var(--mh-ink);color:#fff;border-radius:16px;padding:2.1rem 2.15rem;margin-bottom:1.1rem;border:1px solid var(--mh-ink)}
+.hero .eyebrow{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#F2B49A;font-weight:700}
+.hero h1{color:#fff!important;font-size:2.55rem;letter-spacing:-.055em;margin:.4rem 0}
+.hero p{color:#F3F3F3;font-size:1.03rem;max-width:760px;margin:0;line-height:1.6}
+.step{background:var(--mh-paper);border:1px solid var(--mh-border);border-radius:12px;padding:1rem;height:100%}
+.step b{display:block;color:var(--mh-ink);margin:.3rem 0}
+.step span{font-size:.85rem;color:var(--mh-muted)}
+.kpi{background:var(--mh-paper);border:1px solid var(--mh-border);border-radius:12px;padding:1rem 1.05rem}
+.kpi .label{font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--mh-muted);font-weight:700}
+.kpi .value{font-size:1.8rem;font-weight:800;color:var(--mh-ink)}
+.kpi .sub{font-size:.75rem;color:var(--mh-muted)}
+.finding{border:1px solid var(--mh-border);border-left:4px solid var(--mh-accent);border-radius:10px;padding:1rem;margin:.55rem 0;background:#fff}
+.finding h4{margin:.1rem 0 .4rem;color:var(--mh-ink)!important}
+.smallmuted{color:var(--mh-muted);font-size:.83rem}
+.stTabs [data-baseweb="tab-list"]{gap:.35rem;border-bottom:1px solid var(--mh-border)}
+.stTabs [data-baseweb="tab"]{border-radius:8px 8px 0 0;background:var(--mh-soft);padding:.55rem .9rem;color:var(--mh-ink)}
+.stTabs [aria-selected="true"]{background:var(--mh-ink)!important;color:#fff!important}
+section[data-testid="stSidebar"]{background:var(--mh-soft);border-right:1px solid var(--mh-border)}
+div[data-testid="stMetric"]{background:#fff;border:1px solid var(--mh-border);padding:.8rem;border-radius:10px}
+.stButton>button[kind="primary"],.stFormSubmitButton>button{background:var(--mh-accent)!important;border:1px solid var(--mh-accent)!important;color:#fff!important;border-radius:8px!important;font-weight:650!important}
+.stButton>button[kind="primary"]:hover,.stFormSubmitButton>button:hover{background:var(--mh-accent-hover)!important;border-color:var(--mh-accent-hover)!important}
+.stButton>button:not([kind="primary"]),.stDownloadButton>button{border:1px solid var(--mh-border)!important;border-radius:8px!important;color:var(--mh-ink)!important}
+a{color:var(--mh-accent)!important}
+[data-testid="stFileUploader"] section{border-color:var(--mh-border)!important}
+hr{border-color:var(--mh-border)!important}
 </style>
 """, unsafe_allow_html=True)
 
