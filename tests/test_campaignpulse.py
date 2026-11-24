@@ -33,6 +33,23 @@ class CampaignPulseTests(unittest.TestCase):
         data = dict(SAMPLES["Healthy delivery, unsubscribe watch"], hard_bounces=-1)
         self.assertFalse(analyze_campaign(data)["valid"])
 
+    def test_fractional_count_rejected_instead_of_truncated(self):
+        data = dict(SAMPLES["Healthy delivery, unsubscribe watch"], sent=25000.7)
+        result = analyze_campaign(data)
+        self.assertFalse(result["valid"])
+        self.assertTrue(any("whole number" in error for error in result["validation"]["errors"]))
+
+    def test_non_finite_count_rejected(self):
+        data = dict(SAMPLES["Healthy delivery, unsubscribe watch"], delivered=float("inf"))
+        result = analyze_campaign(data)
+        self.assertFalse(result["valid"])
+        self.assertTrue(any("finite whole number" in error for error in result["validation"]["errors"]))
+
+    def test_integer_valued_decimal_is_accepted(self):
+        data = dict(SAMPLES["Healthy delivery, unsubscribe watch"], sent=25000.0)
+        result = analyze_campaign(data)
+        self.assertTrue(result["valid"])
+
     def test_delivered_over_sent_rejected(self):
         data = dict(SAMPLES["Healthy delivery, unsubscribe watch"], delivered=25001)
         self.assertFalse(analyze_campaign(data)["valid"])
