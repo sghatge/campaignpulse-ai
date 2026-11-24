@@ -56,7 +56,7 @@ Optional:
 - Downloadable Markdown and JSON reports
 
 ## Three demo scenarios
-1. Healthy campaign — stable delivery and engagement, with an unsubscribe signal to monitor.
+1. Healthy delivery, unsubscribe watch — stable delivery and engagement, with an unsubscribe signal to monitor.
 2. Poor deliverability — elevated hard/soft bounce rates and a critical health result.
 3. Declining engagement — strong delivery but weak open and click rates.
 
@@ -85,9 +85,17 @@ Open rates are directional and may be inflated by privacy features. Thresholds a
 ## Supporting assets
 - Interactive application: dedicated CampaignPulse AI Streamlit Community Cloud deployment (deployment setup documented in README)
 - Source: https://github.com/sghatge/campaignpulse-ai
-- V1 specification: https://github.com/sghatge/campaignpulse-ai/blob/main/README_CAMPAIGNPULSE.md
+- V1 specification: https://github.com/sghatge/campaignpulse-ai/blob/main/README.md
 - Detailed playbook: https://github.com/sghatge/campaignpulse-ai/blob/main/modlethub/CAMPAIGNPULSE_AI_PLAYBOOK.md
 - Manifest: https://github.com/sghatge/campaignpulse-ai/blob/main/modlethub/campaignpulse_manifest.json
 
 ## Publication note
 This is a prepared creator submission package, not a submission to ModletHub. Confirm the creator licence, attribution, deletion, AI reuse, exclusivity and commercial terms before publishing the workflow.
+
+
+## Suggested answer for the creator early-access form
+
+**What repeatable marketing, revenue or client-work workflow could you publish, and who is it for?**
+
+CampaignPulse AI is a repeatable email-campaign performance review workflow for CRM and marketing operations teams, Adobe Campaign practitioners and marketing agencies. Users enter or upload sanitized campaign totals; the workflow validates the data, calculates delivery and engagement KPIs, flags potential risks, and produces evidence-led findings with prioritized checks and a shareable report. It helps teams move from raw campaign numbers to a consistent, explainable review in minutes—without connecting to a live marketing platform or exposing customer-level data.
+
