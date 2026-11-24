@@ -127,7 +127,10 @@ def normalize_csv_row(row):
     for key in ["sent","delivered","hard_bounces","soft_bounces","ignored_errors","other_errors","unique_opens","unique_clicks","unsubscribes"]:
         value = row.get(key)
         if pd.notna(value) and str(value).strip() != "":
-            data[key] = int(float(value))
+            numeric = float(value)
+            if not numeric.is_integer() or numeric < 0:
+                raise ValueError(f"{key} must contain a non-negative whole number; received {value!r}.")
+            data[key] = int(numeric)
     return data
 
 st.markdown("""
@@ -284,6 +287,14 @@ if "campaignpulse_last" in st.session_state:
                    "ctor":"Click-to-open rate","unsubscribe_rate":"Unsubscribe rate"}
     kdf=pd.DataFrame([{"Metric":v,"Rate":pct(result["metrics"].get(k))} for k,v in metric_labels.items()])
     st.dataframe(kdf,use_container_width=True,hide_index=True)
+    chart_metrics = pd.DataFrame(
+        [{"Metric": label, "Rate (%)": result["metrics"].get(key)}
+         for label, key in metric_labels.items()
+         if result["metrics"].get(key) is not None]
+    )
+    if not chart_metrics.empty:
+        st.markdown("#### KPI visualisation")
+        st.bar_chart(chart_metrics.set_index("Metric"), use_container_width=True)
     warnings=result["validation"]["warnings"]
     reviews=result["validation"]["reviews"]
     if warnings or reviews:
