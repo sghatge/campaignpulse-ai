@@ -53,6 +53,16 @@ python -m unittest discover -s tests -v
 
 GitHub Actions runs compilation and the unit-test suite on pushes and pull requests to `main`.
 
+## V1 validation status
+
+- Live Streamlit application opened successfully.
+- All three built-in demonstration scenarios were manually tested successfully: healthy delivery, poor deliverability and declining engagement.
+- CSV template upload, campaign-row analysis and CSV validation were manually confirmed.
+- Markdown and JSON report downloads were manually confirmed.
+- Automated GitHub Actions compilation and unit tests passed on the latest recorded run: [run #9](https://github.com/sghatge/campaignpulse-ai/actions/runs/45459944206).
+
+Manual checks above were confirmed by the project owner. They are acceptance checks, not an independent third-party audit.
+
 ## Data and safety boundaries
 
 - Use synthetic or sanitized aggregate campaign counts only.
