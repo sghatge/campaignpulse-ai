@@ -1,6 +1,6 @@
 # CampaignPulse AI — Adobe Campaign Edition
 
-![CampaignPulse AI — campaign analytics and health diagnostics](assets/campaignpulse-banner.svg)
+<img src="assets/portfolio/repo-card.svg" width="520" alt="campaignpulse-ai bespoke project visual">
 
 **An independent campaign intelligence mini-tool by Sangram Ghatge.**
 
